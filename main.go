@@ -159,7 +159,7 @@ func main() {
 		Logger:                        ctrl.Log,
 		ClientDisableCacheFor:         disableCacheFor,
 		NewCache: ctrlcache.BuilderWithOptions(ctrlcache.Options{
-			SelectorsByObject: ctrlcache.SelectorsByObject{
+			ByObject: map[ctrlclient.Object]ctrlcache.ByObject{
 				&kustomizev1.Kustomization{}: {Label: watchSelector},
 			},
 		}),
